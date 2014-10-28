@@ -2,7 +2,18 @@
 
 This API focuses on binding formatted data to types as expressed by the types-api, it allows you to marshal an instance to data and unmarshal an instance from data. In the unmarshalling phase there is a big emphasis on *transparent* big data support.
 
-Note that this API takes the stance that validation should **not** be done by parsers unless absolutely necessary, for this reason you won't find many validation options. The idea is to first parse it to a type instance and then use the default validation rules there. Too many frameworks have validation at all levels obscuring what is actually validated when and where making it hard to provide any guarantees about the data integrity when it comes from multiple source and complicating error handling.
+Note that this API takes the stance that validation should **not** be done by parsers unless absolutely necessary, for this reason you won't find many validation options. The idea is to first parse it to a type instance and then use the default validation rules there. The reasons for this are many:
+
+- If data is coming from different sources (and possibly data formats) it is hard to provide guarantees about data integrity at a higher level if validation is spread out over multiple levels
+- Error handling is complicated if validation errors can be thrown by multiple levels in (probably) different formats
+- Validation at the format level is by definition format-specific requiring you to master multiple validation methods
+- In the end, you want to reach a structural overview of the data as soon as possible, even if its not entirely valid. It is much easier to work with an invalid yet fully parsed object than simply an invalid file 
+
+If you are working with type definitions that have actual simple types, the parser of course does need to parse the field. If you have a date with format "yyyy-MM-dd" but in reality the field contains "thisistest" it will obviously throw a parsing exception. 
+
+In some cases even such a basic check is unwanted which is why the type system supports an "actualType" property on a String. Instead of defining the data type as a Date which **has** to be parsed in order to set it in the instance you can define it as a String with the "actualType" of Date. When validating, the string field will use the validation rules of whatever type is assigned to it, meaning apart from flagrant format errors (missing XML tags and the like), the parsing will always succeed but may yield an invalid result which can be checked by running a validation check on the resulting instance.
+
+This gives you the best of both worlds and allows you to choose where you want to draw the line.
 
 ## Big Data
 
