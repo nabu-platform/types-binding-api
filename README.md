@@ -1,7 +1,8 @@
 # Type Binding
 
-This API focuses on binding formatted data to types as expressed by the types-api, it allows you to marshal an instance to data and unmarshal an instance from data.
-In the unmarshalling phase there is a big emphasis on *transparent* big data support 
+This API focuses on binding formatted data to types as expressed by the types-api, it allows you to marshal an instance to data and unmarshal an instance from data. In the unmarshalling phase there is a big emphasis on *transparent* big data support.
+
+Note that this API takes the stance that validation should **not** be done by parsers unless absolutely necessary, for this reason you won't find many validation options. The idea is to first parse it to a type instance and then use the default validation rules there. Too many frameworks have validation at all levels obscuring what is actually validated when and where making it hard to provide any guarantees about the data integrity when it comes from multiple source and complicating error handling.
 
 ## Big Data
 
