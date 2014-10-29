@@ -15,6 +15,8 @@ In some cases even such a basic check is unwanted which is why the type system s
 
 This gives you the best of both worlds and allows you to choose where you want to draw the line.
 
+The general lack of transformation utilities at the binding level follows the same logic as validation: it should not be spread out. You could add some basic transformation logic which might be format specific at the binding level but it again obscures what is actually going on by splitting it over multiple layers.
+
 ## Big Data
 
 One of the biggest problems with existing tools is the support for large files. Most tools have some support for it, but it generally requires a radically different approach to both the parsing step and the steps afterwards. This is frustrating because it requires two sets of skills and if a file that started off small eventually becomes big you may need to refactor large portions of the project.
