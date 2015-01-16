@@ -21,7 +21,7 @@ abstract public class BaseConfigurableTypeBinding<T extends BindingConfig> exten
 		this.definedTypeResolver = definedTypeResolver;
 	}
 	
-	private ComplexType getComplexType() {
+	protected ComplexType getComplexType() {
 		if (config == null || config.getComplexType() == null) {
 			throw new NullPointerException("Can not find binding config or the complex type is not defined in the binding config");
 		}
