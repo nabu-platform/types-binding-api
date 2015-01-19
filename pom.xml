@@ -4,7 +4,7 @@
 	<groupId>be.nabu.libs.types</groupId>
 	<artifactId>types-binding-api</artifactId>
 	<packaging>bundle</packaging>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>types-binding-api</name>
 	<url>http://maven.apache.org</url>
 
@@ -23,6 +23,14 @@
 						<Export-Package>${project.groupId}.binding.*</Export-Package>
 					</instructions>
 				</configuration>			
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
