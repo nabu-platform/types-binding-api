@@ -22,7 +22,7 @@
 						<Bundle-Version>1.0.0</Bundle-Version>
 						<Export-Package>${project.groupId}.binding.*</Export-Package>
 					</instructions>
-				</configuration>			
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -39,27 +39,17 @@
 		<dependency>
 			<groupId>be.nabu.libs.artifacts</groupId>
 			<artifactId>artifacts-api</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>be.nabu.libs.types</groupId>
 			<artifactId>types-api</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>be.nabu.libs.property</groupId>
-			<artifactId>property-api</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>be.nabu.utils</groupId>
-			<artifactId>utils-io</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>be.nabu.libs.resources</groupId>
 			<artifactId>resources-api</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<version>1.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>
