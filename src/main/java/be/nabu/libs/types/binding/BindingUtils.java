@@ -6,7 +6,7 @@ public class BindingUtils {
 		int index = -1;
 		int lastIndex = 0;
 		boolean first = true;
-		while ((index = name.indexOf(character, index)) >= lastIndex) {
+		while ((index = name.indexOf(character, lastIndex)) >= lastIndex) {
 			String substring = name.substring(lastIndex, index);
 			if (substring.isEmpty()) {
 				continue;
