@@ -18,6 +18,10 @@ public class Window {
 	 */
 	private int batchSize;
 
+	public Window() {
+		// auto construct
+	}
+	
 	public Window(String path, int size, int batchSize) {
 		if (size <= 0)
 			throw new IllegalArgumentException("The size of a window must be at least 1");
