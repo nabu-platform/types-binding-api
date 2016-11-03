@@ -48,4 +48,17 @@ public class Window {
 	public String toString() {
 		return "WINDOW[" + getPath() + ", " + getBatchSize() + ", " + getSize() + "]";
 	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public void setBatchSize(int batchSize) {
+		this.batchSize = batchSize;
+	}
+	
 }
