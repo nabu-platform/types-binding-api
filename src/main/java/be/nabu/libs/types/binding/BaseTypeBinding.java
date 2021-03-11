@@ -99,6 +99,11 @@ abstract public class BaseTypeBinding implements MarshallableBinding, Unmarshall
 		public ReadableContainer<ByteBuffer> getReadable() throws IOException {
 			return content;
 		}
+
+		@Override
+		public void close() throws IOException {
+			content.close();
+		}
 		
 	}
 }

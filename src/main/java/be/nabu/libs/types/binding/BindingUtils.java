@@ -20,7 +20,7 @@ public class BindingUtils {
 			}
 			lastIndex = index + 1;
 		}
-		if (lastIndex < name.length() - 1) {
+		if (lastIndex <= name.length() - 1) {
 			if (first) {
 				builder.append(name.substring(lastIndex));
 			}
