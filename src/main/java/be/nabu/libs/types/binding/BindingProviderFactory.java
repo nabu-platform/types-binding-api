@@ -34,6 +34,18 @@ public class BindingProviderFactory {
 		this.bindingProviders.remove(converter);
 	}
 	
+	public BindingProvider getProviderFor(String contentType) {
+		if (contentType == null) {
+			throw new NullPointerException("Must provide a content type");
+		}
+		for (BindingProvider available : getProviders()) {
+			if (contentType.equals(available.getContentType())) {
+				return available;
+			}
+		}
+		return null;
+	}
+	
 	@SuppressWarnings("unchecked")
 	public List<BindingProvider> getProviders() {
 		if (!spiLoaded) {
