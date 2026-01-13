@@ -29,4 +29,5 @@ public interface BindingProvider {
 	public Collection<Property<?>> getSupportedProperties();
 	public UnmarshallableBinding getUnmarshallableBinding(ComplexType type, Charset charset, Value<?>...values);
 	public MarshallableBinding getMarshallableBinding(ComplexType type, Charset charset, Value<?>...values);
+	public default boolean isText() { return true; }
 }
